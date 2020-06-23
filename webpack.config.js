@@ -10,7 +10,7 @@ module.exports = {
       test: /\.jsx?$/,
         exclude: /(node_modules|bower_components)/,
         use: [{
-          loader: 'babel-loader',
+          loader: 'babel-loader?cacheDirectory', // enable build cache
           options: {
             presets: ['@babel/preset-react', '@babel/preset-env']
           }
@@ -23,6 +23,6 @@ module.exports = {
     },
     plugins: debug ? [] : [
       new webpack.optimize.OccurrenceOrderPlugin(),
-      new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }),
+      new webpack.optimize.UglifyJsPlugin({ cache: true, parallel: true, mangle: false, sourcemap: false }), // enable build cache and parallel build
     ]
 };
