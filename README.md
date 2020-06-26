@@ -1,9 +1,11 @@
 # react
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-react tutorial
+[![RRCWT](https://github.com/iamskyrabbit/react/workflows/react/badge.svg)](https://github.com/iamskyrabbit/react/actions)
+[![Docker: mysql](http://img.shields.io/badge/Docker-mysql-blue.svg)](mysql/Dockerfile)
 ## Requirement
 - Node.js: server-side JavaScript platform
 - npm: Node.js package manager
+- docker, docker-compose: developmental platform for virtualization
 ### webpack, babel, React.js
 - webpack: module bundler to bundle JavaScript files for usage in a browser
 - babel: JavaScript compiler
@@ -20,6 +22,24 @@ $ npm install --save-dev react react-dom
 `$ ./node_modules/.bin/webpack-dev-server --content-base src --mode development`  
 or  
 `$ npm start`  
+### MySQL
+1. build image
+`$ docker-compose build`
+2. create container
+`$ docker-compose up -d`
+3. log-in container
+`$ docker exec -it react_mysql_1 bash -p`
+4. launch mysql
+`root@(snip):/# mysql -u root -p -h 127.0.0.1`
+#### no docker-compose ver.
+1. install image
+`$ docker pull mysql:latest`
+2. create container
+`$ docker run -it --name test-wolrd-mysql -e MYSQL_ROOT_PASSWORD=mysql -d mysql:latest`
+3. log-in container
+`$ docker exec -it test-wolrd-mysql bash -p`
+4. launch mysql
+`root@(snip):/# mysql -u root -p -h 127.0.0.1`
 ### Express, sequelize
 - Express: framework of Node.js
   - app.js: body of Express application
