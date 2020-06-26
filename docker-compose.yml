@@ -3,7 +3,11 @@ services:
   mysql:
     build: ./mysql/
     volumes:
-      - ./mysql/db:/docker-entrypoint-initdb.d
-    image: original_mysql_world
+      - ./mysql/db:/docker-entrypoint-initdb.d:cached
+    image: mysql-tutorial
     environment:
       MYSQL_ROOT_PASSWORD: password
+  node:
+    depends_on: [mysql]
+    build: ./
+    image: node-tutorial
