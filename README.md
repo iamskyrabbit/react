@@ -5,11 +5,13 @@
 ## Requirement
 - Node.js: server-side JavaScript platform
 - npm: Node.js package manager
+  - [https://nodejs.org/](https://nodejs.org/)
 - docker, docker-compose: developmental platform for virtualization
 ### webpack, babel, React.js
 - webpack: module bundler to bundle JavaScript files for usage in a browser
 - babel: JavaScript compiler
 - React: JavaScript library for interactive UI
+  - [https://reactjs.org/](https://reactjs.org/)
 ```
 $ npm install --save-dev webpack webpack-cli webpack-dev-server
 $ npm install -g webpack webpack-cli
@@ -42,12 +44,14 @@ or
 `root@(snip):/# mysql -u root -p -h 127.0.0.1`
 ### Express, sequelize
 - Express: framework of Node.js
+  - [http://expressjs.com/](http://expressjs.com/)
   - app.js: body of Express application
   - bin/www: setting for app.js to work as server
   - public/: static contents
   - routes/: setting for routing
   - views/: template engine
 - sequelize: O/R mapper to map Object to DB
+  - [http://docs.sequelizejs.com/](http://docs.sequelizejs.com/)
   - config/config.json: configuration
   - migrations/: scripts for DB migration
   - models/: ?
